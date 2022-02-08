@@ -6,7 +6,7 @@ import java.util.List;
 
 public class OrganizingContainers {
 
-    public static String organizingContainers(List<List<Integer>> container){
+    public static String solution(List<List<Integer>> container){
         // Attempt #1 HashMaps
 //        HashMap<Integer, Integer> ballCount = new HashMap<>();
 //        HashMap<Integer, Integer> boxCap = new HashMap<>();
@@ -72,12 +72,12 @@ public class OrganizingContainers {
         containers.add((List.of(1, 3, 1)));
         containers.add((List.of(2, 1, 2)));
         containers.add((List.of(3, 3, 3)));
-        System.out.println(organizingContainers((containers)));
+        System.out.println(solution(containers));
 
         containers.clear();
         containers.add((List.of(0, 2, 1)));
         containers.add((List.of(1, 1, 1)));
         containers.add((List.of(2, 0, 0)));
-        System.out.println(organizingContainers((containers)));
+        System.out.println(solution(containers));
     }
 }
