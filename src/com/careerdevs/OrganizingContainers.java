@@ -1,13 +1,11 @@
 package com.careerdevs;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class OrganizingContainers {
 
     public static String solution(List<List<Integer>> container){
-        // Attempt #1 HashMaps
+        // Attempt #1 HashMaps - passed 2/9
 //        HashMap<Integer, Integer> ballCount = new HashMap<>();
 //        HashMap<Integer, Integer> boxCap = new HashMap<>();
 //
@@ -43,24 +41,51 @@ public class OrganizingContainers {
 //
 //        return "Possible";
 
-        // Attempt #2 Arrays.sort
-        int[] ballCount = new int[container.size()];
-        int[] boxCount = new int[container.size()];
+//        // Attempt #2 Arrays.sort
+//        int[] ballCount = new int[container.size()];
+//        int[] boxCount = new int[container.size()];
+//
+//        for(int box = 0; box < container.size(); box++){
+//            for(int color = 0; color < container.size(); color++){
+//                int count = container.get(box).get(color);
+//
+//                ballCount[color] += count;
+//                boxCount[box] += count;
+//            }
+//        }
+//
+//        Arrays.sort(ballCount);
+//        Arrays.sort(boxCount);
+//
+//        for(int i = 0; i < ballCount.length; i++){
+//            if(ballCount[i] != boxCount[i])
+//                return "Impossible";
+//        }
+//
+//        return "Possible";
+
+        // Attempt #3 HashMap
+        HashMap<Integer, Integer> ballCount = new HashMap<>();
+        HashMap<Integer, Integer> boxCap = new HashMap<>();
 
         for(int box = 0; box < container.size(); box++){
             for(int color = 0; color < container.size(); color++){
                 int count = container.get(box).get(color);
 
-                ballCount[color] += count;
-                boxCount[box] += count;
+                if(ballCount.containsKey(color))
+                    ballCount.put(color, ballCount.get(color) + count);
+                else
+                    ballCount.put(color, count);
+
+                if(boxCap.containsKey(box))
+                    boxCap.put(box, boxCap.get(box) + count);
+                else
+                    boxCap.put(box, count);
             }
         }
 
-        Arrays.sort(ballCount);
-        Arrays.sort(boxCount);
-
-        for(int i = 0; i < ballCount.length; i++){
-            if(ballCount[i] != boxCount[i])
+        for(Map.Entry<Integer, Integer> color : ballCount.entrySet()){
+            if(!boxCap.containsValue(color.getValue()))
                 return "Impossible";
         }
 
