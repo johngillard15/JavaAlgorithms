@@ -31,7 +31,7 @@ public class SherlockAndAnagrams {
                         subStart++;
                     }
 
-                    // if the letter count of the current substring does not match the total word,
+                    // if the letter count of the current substring does not match the total word count,
                     // the string is not an anagram
                     boolean isAnagram = true;
                     for(Map.Entry<Character, Integer> letter : totalCount.entrySet()){
