@@ -12,7 +12,7 @@ class ListNode<T>{
 public class RemoveKFromList {
 
     public static ListNode<Integer> solution(ListNode<Integer> l, int k){
-        ListNode<Integer> head;
+        ListNode<Integer> temp;
 
         return l;
     }
