@@ -11,10 +11,17 @@ class ListNode<T>{
 
 public class RemoveKFromList {
 
-    public static ListNode<Integer> solution(ListNode<Integer> l, int k){
-        ListNode<Integer> temp;
+    public static ListNode<Integer> solution(ListNode<Integer> head, int k){
+        if(head == null)
+            return null;
 
-        return l;
+        head.next = solution(head.next, k);
+
+        if(head.value == k){
+            return head.next;
+        }
+
+        return head;
     }
 
     public static void main(String[] args) {
