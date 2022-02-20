@@ -1,14 +1,5 @@
 package com.careerdevs;
 
-class ListNode<T>{
-   ListNode(T x) {
-     value = x;
-   }
-
-   T value;
-   ListNode<T> next;
- }
-
 public class RemoveKFromList {
 
     public static ListNode<Integer> solution(ListNode<Integer> head, int k){
