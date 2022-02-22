@@ -2,10 +2,10 @@ package com.careerdevs;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class IsListPalindrome {
     public static boolean solution(ListNode<Integer> head) {
-        boolean isPalindrome = true;
         List<Integer> numbers = new ArrayList();
         ListNode<Integer> temp = head;
 
@@ -15,16 +15,11 @@ public class IsListPalindrome {
         }
 
         for(int i = 0; i < numbers.size() / 2; i++){
-            System.out.println(numbers.get(i) + " = " + numbers.get(numbers.size() - 1 - i));
-            System.out.println(numbers.get(i) == numbers.get(numbers.size() - 1 - i));
-
-            if(numbers.get(i) != numbers.get(numbers.size() - 1 - i)){
-                isPalindrome = false;
-                // break;
-            }
+            if(!Objects.equals(numbers.get(i), numbers.get(numbers.size() - 1 - i)))
+                return false;
         }
 
-        return isPalindrome;
+        return true;
     }
 
     public static void main(String[] args) {
