@@ -19,8 +19,4 @@ public class RemoveKFromList {
 
         return head;
     }
-
-    public static void main(String[] args) {
-        System.out.println();
-    }
 }
