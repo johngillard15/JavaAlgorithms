@@ -38,12 +38,14 @@ public class LinkedList {
     }
 
     public static void displayNode(Node<Integer> head){
+        if(head == null)
+            return;
+
         Node<Integer> node = head;
         String nodes = node.value.toString();
-        node = node.next;
 
-        while(node != null){
-            nodes += ", " + node.value;
+        while(node.next != null){
+            nodes += ", " + node.next.value;
             node = node.next;
         }
 
