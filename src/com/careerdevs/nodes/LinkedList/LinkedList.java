@@ -52,11 +52,34 @@ public class LinkedList {
         System.out.println(nodes);
     }
 
-    public static void find(Node<Integer> head, int query){
+    public static Node<Integer> find(Node<Integer> head, int query){
+        Node<Integer> node = head;
 
+        while(node != null && node.value != query){
+            node = node.next;
+        }
+
+        return node;
     }
 
-    public static void remove(Node<Integer> head, int vert){
+    public static void remove(Node<Integer> head, int query){
+//        if(head.value == query){
+//            head = head.next;
+//            return;
+//        }
 
+        while(head != null && head.value == query)
+            head = head.next;
+
+        Node<Integer> node = head;
+
+        if(node != null){
+            while(node.next != null){
+                if(node.next.value == query)
+                    node.next = node.next.next;
+                else
+                    node = node.next;
+            }
+        }
     }
 }
