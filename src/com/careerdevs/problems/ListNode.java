@@ -1,4 +1,4 @@
-package com.careerdevs;
+package com.careerdevs.problems;
 
 
 class ListNode<T>{

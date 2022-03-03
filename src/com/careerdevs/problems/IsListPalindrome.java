@@ -1,4 +1,4 @@
-package com.careerdevs;
+package com.careerdevs.problems;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.careerdevs;
+package com.careerdevs.problems;
 
 import java.util.HashMap;
 import java.util.List;
