@@ -1,5 +1,7 @@
 package com.careerdevs.problems;
 
+import com.careerdevs.problems.resources.ListNode;
+
 public class RemoveKFromList {
 
     public static ListNode<Integer> solution(ListNode<Integer> head, int k){

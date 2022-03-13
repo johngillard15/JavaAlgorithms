@@ -1,5 +1,7 @@
 package com.careerdevs.problems;
 
+import com.careerdevs.problems.resources.ListNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

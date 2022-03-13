@@ -1,5 +1,7 @@
 package com.careerdevs.problems;
 
+import com.careerdevs.problems.resources.ListNode;
+
 public class MergeTwoLinkedLists {
 
     public static ListNode<Integer> solution(ListNode<Integer> l1, ListNode<Integer> l2) {
