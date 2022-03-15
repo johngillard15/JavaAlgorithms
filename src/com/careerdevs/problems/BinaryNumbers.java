@@ -17,18 +17,47 @@ public class BinaryNumbers {
 
         bufferedReader.close();
 
-        Pattern regex = Pattern.compile("1+");
-        Matcher match = regex.matcher(Integer.toString(n, 2));
+        // regex
+//        Pattern regex = Pattern.compile("1+");
+//        Matcher match = regex.matcher(Integer.toString(n, 2));
+//
+//        List<String> matchList = new ArrayList<>();
+//        while(match.find())
+//            matchList.add(match.group());
+//
+//        int longest = matchList.stream()
+//                .map(String::length)
+//                .max(Integer::compareTo)
+//                .get()
+//                ;
 
-        List<String> matchList = new ArrayList<>();
-        while(match.find())
-            matchList.add(match.group());
+        // String iteration
+//        String nBin = Integer.toString(n, 2);
+//
+//        int longest = 0, count = 0;
+//        for(char x : nBin.toCharArray()){
+//            if(x == '1'){
+//                if(++count > longest)
+//                    longest = count;
+//            }
+//            else
+//                count = 0;
+//        }
 
-        int longest = matchList.stream()
-                .map(String::length)
-                .max(Integer::compareTo)
-                .get()
-                ;
+        // Long division
+        long nBin = Long.parseLong(Integer.toString(n, 2));
+
+        int longest = 0, count = 0;
+        do{
+            if(nBin % 2 == 1){
+                if(++count > longest)
+                    longest = count;
+            }
+            else
+                count = 0;
+
+            nBin /= 10;
+        } while(nBin > 0);
 
         System.out.println(longest);
     }
