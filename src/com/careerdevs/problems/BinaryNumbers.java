@@ -47,17 +47,15 @@ public class BinaryNumbers {
         // Long division
         long nBin = Long.parseLong(Integer.toString(n, 2));
 
-        int longest = 0, count = 0;
-        do{
+        int longest = 0;
+        for(int count = 0; nBin > 0; nBin /= 10){
             if(nBin % 2 == 1){
                 if(++count > longest)
                     longest = count;
             }
             else
                 count = 0;
-
-            nBin /= 10;
-        } while(nBin > 0);
+        }
 
         System.out.println(longest);
     }
