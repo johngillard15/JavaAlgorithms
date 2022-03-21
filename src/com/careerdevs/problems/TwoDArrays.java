@@ -9,16 +9,16 @@ public class TwoDArrays {
         int max = Integer.MIN_VALUE;
         for(int row = 0; row < rows - 2; row++){
             for(int col = 0; col < cols - 2; col++){
-                int sum;
+                int sum = 0;
                 if(col == 0){
                     sum = lastSum = arr[row][col] + arr[row][col + 1] + arr[row][col + 2]
                         + arr[row + 1][col + 1]
                         + arr[row + 2][col] + arr[row + 2][col + 1] + arr[row + 2][col + 2];
                 }
-                else{
-                    sum = lastSum - (arr[row][col - 1] + arr[row + 1][col] + arr[row + 2][col - 1])
-                        + arr[row][col + 2] + arr[row + 1][col + 1] + arr[row + 2][col - 1];
-                }
+//                else{
+//                    sum = lastSum - (arr[row][col - 1] + arr[row + 1][col] + arr[row + 2][col - 1])
+//                        + arr[row][col + 2] + arr[row + 1][col + 1] + arr[row + 2][col - 1];
+//                }
 
                 if(sum > max)
                     max = sum;
