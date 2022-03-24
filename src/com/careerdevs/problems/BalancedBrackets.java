@@ -13,27 +13,22 @@ public class BalancedBrackets {
 
         for(char c : s.toCharArray()){
             switch(c){
-                case '(':
-                case '{':
-                case '[':
-                    brackets.add(c);
-                    break;
-
-                case ')':
+                case '(', '{', '[' -> brackets.add(c);
+                case ')' -> {
                     if(brackets.isEmpty() || brackets.get(brackets.size() - 1) != '(')
                         return "NO";
                     brackets.remove(brackets.size() - 1);
-                    break;
-                case '}':
+                }
+                case '}' -> {
                     if(brackets.isEmpty() || brackets.get(brackets.size() - 1) != '{')
                         return "NO";
                     brackets.remove(brackets.size() - 1);
-                    break;
-                case ']':
+                }
+                case ']' -> {
                     if(brackets.isEmpty() || brackets.get(brackets.size() - 1) != '[')
                         return "NO";
                     brackets.remove(brackets.size() - 1);
-                    break;
+                }
             }
         }
 
