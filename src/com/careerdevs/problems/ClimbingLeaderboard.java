@@ -28,7 +28,7 @@ public class ClimbingLeaderboard {
 //
 //        return podium;
 
-        // Attempt 2 - distinct ranked list
+        // Attempt 2 - distinct ranked list 8/10
         List<Integer> podium = new ArrayList<>();
         ranked = ranked.stream().distinct().collect(Collectors.toList());
 
